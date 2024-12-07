@@ -1,0 +1,15 @@
+services:
+  pytorch251:
+    container_name: "devcon_pytorch251"
+    build:
+      context: ./.devcontainer
+      dockerfile: Dockerfile
+    image: devcon-pytorch251:latest
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - .:/workspace:cached
+    command: sleep infinity
+ 
